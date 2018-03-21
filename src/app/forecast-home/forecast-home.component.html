@@ -1,0 +1,5 @@
+<h1 class="section-header">Weather Forecast for next five days</h1>
+<h2 style="text-align:center"><span class="glyphicon glyphicon-map-marker"></span>Delhi</h2>
+<div class="row " *ngFor="let forecast of forecastList">
+    <app-forecast-tile [forecast]="forecast"></app-forecast-tile>
+</div>

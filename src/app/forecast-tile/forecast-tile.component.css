@@ -1,0 +1,27 @@
+.forecast-tile {
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px;
+    min-height: 200px;
+    width: 60%;
+    background-image: linear-gradient(to bottom right, #e5e5e5, skyblue);
+    box-shadow: 5px 5px 5px grey, inset 3px 2px 3px rgb(221, 221, 221), inset -3px -2px 3px black;
+}
+
+.forecast-date {
+    padding: 30px;
+    font-size: 1.2em;
+}
+
+.forecast-labels {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.forecast-details {
+    border-left: 2px black solid
+}
+
+.forecast-labels-sm {
+    font-weight: bold;
+}

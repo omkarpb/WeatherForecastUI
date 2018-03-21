@@ -1,0 +1,18 @@
+<div class="forecast-tile row" *ngIf="forecast">
+    <div class="col-xs-12 col-md-5 forecast-date">
+        <p class="forecast-labels">{{forecast.date | date:'dd MMM yyyy'}}</p>
+        <p>{{forecast.date | date:'EEEE'}}</p>
+        <p><span class="glyphicon glyphicon-time"></span> {{forecast.date | date:'HH:mm'}}</p>
+    </div>
+    <div class="col-xs-12 col-md-7 forecast-details">
+        <p>
+            <span class="label label-default forecast-labels"> {{forecast.description}}</span>
+            <img [src]="forecast.icon">
+        </p>
+        <p><span class="forecast-labels">{{forecast.temp}} <sup>o</sup>C</span>
+            <span style="float:right">  <span class="forecast-labels-sm">Min:</span> {{forecast.minTemp}} <sup>o</sup>C , <span class="forecast-labels-sm">Max:</span> {{forecast.maxTemp}} <sup>o</sup>C</span>
+        </p>
+        <p><span class="forecast-labels-sm">Pressure:</span> {{forecast.pressure}} hPa</p>
+        <p><span class="forecast-labels-sm">Humidity:</span> {{forecast.humidity}} %</p>
+    </div>
+</div>
