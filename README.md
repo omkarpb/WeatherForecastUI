@@ -19,3 +19,8 @@ This project is developed for exercise purpose. It uses [openweatherAPI](https:/
 
 ## Running end-to-end tests
 1. Run `npm run e2e` to execute the end-to-end tests via Protractor
+
+## Tasks that can be done next
+1. Better user interface
+2. Organized CSS (with use of SASS)
+3. Exhaustive test cases
