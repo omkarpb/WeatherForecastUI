@@ -1,9 +1,9 @@
 # WeatherForecastUi
 
-This project is developed for exercise purpose. It uses [openweatherAPI][https://openweathermap.org/forecast5] to get the weather forecast data for next 5 days and it displays this data on UI.
+This project is developed for exercise purpose. It uses [openweatherAPI](https://openweathermap.org/forecast5) to get the weather forecast data for next 5 days and it displays this data on UI.
 
 ## Execute it locally
-1. Clone repository from ``
+1. Clone repository from `https://github.com/omkarpb/WeatherForecastUI.git`
 2. Run `npm install`
 
 ## Run
