@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ForecastHomeComponent } from './forecast-home/forecast-home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/forecast', pathMatch: 'full' },
-  { path: 'forecast', component: ForecastHomeComponent },
+  { path: '', component: ForecastHomeComponent },
+  // { path: 'forecast', component: ForecastHomeComponent },
 ];
 
 @NgModule({
