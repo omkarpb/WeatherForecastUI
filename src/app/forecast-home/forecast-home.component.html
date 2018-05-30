@@ -1,5 +1,18 @@
 <h1 class="section-header">Weather Forecast for next five days</h1>
-<h2 style="text-align:center"><span class="glyphicon glyphicon-map-marker"></span>Delhi</h2>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-4 col-xs-10 col-xs-offset-1">
+            <input class="form-control" type="text" placeholder="Enter city name" [(ngModel)]="cityName" name="cityName">
+        </div>
+        <div class="col-md-4 col-xs-10">
+            <button class="btn btn-primary" (click)="getForecast()">Get Forecast</button>
+        </div>
+    </div>
+</form>
+
+<h2 style="text-align:center"><span class="glyphicon glyphicon-map-marker"></span>{{cityName}}</h2>
+
 <div class="row " *ngFor="let forecast of forecastList">
     <app-forecast-tile [forecast]="forecast"></app-forecast-tile>
 </div>

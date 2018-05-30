@@ -11,6 +11,7 @@ import { handleError } from '../utilities/common.utility';
 })
 export class ForecastHomeComponent implements OnInit {
   forecastList: ForecastModel[] = [];
+  cityName: string = 'Delhi';
   constructor(private forecastService: ForecastService) { }
 
   ngOnInit() {
@@ -19,21 +20,37 @@ export class ForecastHomeComponent implements OnInit {
 
   private getFiveDayForecast() {
     this.forecastService.getFiveDayForecast().subscribe((response: object) => {
-      const forecasts: ForecastModel[] = [];
-      const result: any[] = response['list'];
-      result.forEach((value) => {
-        forecasts.push({
-          date: value.dt_txt,
-          temp: value.main.temp,
-          minTemp: value.main.temp_min,
-          maxTemp: value.main.temp_max,
-          pressure: value.main.pressure,
-          humidity: value.main.humidity,
-          description: value.weather[0].description,
-          icon: util.format(config.WeatherIconUrl, value.weather[0].icon),
-        } as ForecastModel);
+      this.forecastList = this.processData(response);
+    }
+      ,(error: any)=> {
+        handleError(error);
+        this.forecastList = [];
       });
-      this.forecastList = forecasts;
-    }, handleError);
+  }
+
+  getForecast() {
+    this.forecastService.getFiveDayForecastByCity(this.cityName).subscribe((response: object) => {
+      this.forecastList = this.processData(response);
+    }, (error: any)=> {
+      handleError(error);
+      this.forecastList = [];
+    });
+  }
+
+  processData(response: object) {
+    const forecasts: ForecastModel[] = [];
+    response['list'].forEach((value) => {
+      forecasts.push({
+        date: value.dt_txt,
+        temp: value.main.temp,
+        minTemp: value.main.temp_min,
+        maxTemp: value.main.temp_max,
+        pressure: value.main.pressure,
+        humidity: value.main.humidity,
+        description: value.weather[0].description,
+        icon: util.format(config.WeatherIconUrl, value.weather[0].icon),
+      } as ForecastModel);
+    });
+    return forecasts;
   }
 }

@@ -19,4 +19,8 @@ export class ForecastService {
   getFiveDayForecast(): Observable<object> {
     return this.http.get(`${config.forecastBase}/forecast?id=${config.cityIDDelhi}&appid=${config.APIKey}&units=metric`);
   }
+
+  getFiveDayForecastByCity(cityName: string): Observable<object> {
+    return this.http.get(`${config.forecastBase}/forecast?q=${cityName}&appid=${config.APIKey}&units=metric`);
+  }
 }
